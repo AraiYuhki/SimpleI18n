@@ -1,0 +1,10 @@
+{
+  "name": "co.jp.joro.i18n",
+  "displayName": "I18n",
+  "version": "0.2.0",
+  "unity": "2022.3",
+  "description": "I18n\u7ffb\u8a33\u30b7\u30b9\u30c6\u30e0\nLarable\u5f0f\u306e\u30d1\u30fc\u30b9\u30b7\u30b9\u30c6\u30e0\u3092\u518d\u73fe\u3057\u3066\u3044\u307e\u3059",
+  "author": {
+    "name": "arai-yuhki"
+  }
+}
