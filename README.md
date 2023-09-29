@@ -2,7 +2,7 @@
 Joro I18n 翻訳システムパッケージ
 
 プロジェクトに追加する場合は、UPMの+ボタンを押して、Add package from git URLから以下のURLを追加する。
-https://github.com/arai-yuki/I18n.git?path=Packages/I18n
+https://github.com/AraiYuhki/SimpleI18n.git?path=Packages/I18n
 
 # 概要
 [こちら](https://readouble.com/laravel/9.x/ja/localization.html)の複数形の箇所を元に機能を作成しています。
