@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "co.jp.joro.i18n": {
+    "co.xeon.xeon.localization.i18n": {
       "version": "file:I18n",
       "depth": 0,
       "source": "embedded",
