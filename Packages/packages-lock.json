@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "co.xeon.xeon.localization.i18n": {
+    "co.xeon.localization.i18n": {
       "version": "file:I18n",
       "depth": 0,
       "source": "embedded",
