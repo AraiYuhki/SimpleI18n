@@ -1,10 +1,10 @@
-using UnityEngine;
+using System;
 
 namespace Xeon.Localization
 {
-    public interface ITranslateDataSet
+    public interface ITranslateDataSet<T> where T : Enum
     {
         string Text { get; }
-        bool Translate(SystemLanguage language, out string result);
+        bool Translate(T language, out string result);
     }
 }

@@ -7,7 +7,7 @@ using UnityEngine.TestTools;
 
 namespace Xeon.Localization.Test
 {
-    public class TestData : ITranslateDataSet
+    public class TestData : ITranslateDataSet<SystemLanguage>
     {
         private Dictionary<SystemLanguage, string> _texts = new Dictionary<SystemLanguage, string>();
         public TestData(string text) => _texts.Add(SystemLanguage.Japanese, text);
@@ -24,9 +24,9 @@ namespace Xeon.Localization.Test
         }
     }
 
-    public class TestDatabase : IDatabase
+    public class TestDatabase : IDatabase<TestData, SystemLanguage>
     {
-        private static readonly Dictionary<string, ITranslateDataSet> _data = new()
+        private static readonly Dictionary<string, TestData> _data = new()
         {
             { "translate_only" , new TestData("translated text") },
             { "choice_test", new TestData("{0} zero|{1} one|[2,5] between two and five|[6,*] greater than six") },
@@ -40,12 +40,12 @@ namespace Xeon.Localization.Test
             { "rank_test", new TestData((SystemLanguage.Japanese, "{1}優勝|{2}準優勝|[3,5]:rank位(敢闘賞)|[6,*]:rank位"), (SystemLanguage.English, "{1}1st|{2}2nd|{3}3rd|[4,*]:rankth")) },
             { "german_only", new TestData((SystemLanguage.German, "ドイツ語")) },
         };
-        public ITranslateDataSet FindByKey(string key)
+        public TestData FindByKey(string key)
         {
             return _data[key];
         }
 
-        public bool TryFindByKey(string key, out ITranslateDataSet translated)
+        public bool TryFindByKey(string key, out TestData translated)
         {
             return _data.TryGetValue(key, out translated);
         }
@@ -53,11 +53,12 @@ namespace Xeon.Localization.Test
 
     public class I18nTest
     {
+        private I18n<TestData, SystemLanguage> i18n;
         [OneTimeSetUp]
         public void SetupDatabase()
         {
             var database = new TestDatabase();
-            I18n.SetDatabase(database);
+            i18n = new I18n<TestData, SystemLanguage>(database, SystemLanguage.Japanese);
         }
 
         public class TestCaseData
@@ -199,14 +200,14 @@ namespace Xeon.Localization.Test
         [TestCaseSource(typeof(TestCaseData), nameof(TestCaseData.GetTranslateTestData))]
         public void TranslateTest(TestCaseData testData)
         {
-            Assert.That(testData.Expect == I18n.Translate(testData.Key, testData.Params));
+            Assert.That(testData.Expect == i18n.Translate(testData.Key, testData.Params));
         }
 
         [Test]
         [TestCaseSource(typeof(TestCaseData), nameof(TestCaseData.GetTransChoiceTestData))]
         public void TransChoiceTest(TestCaseData testData)
         {
-            var actual = I18n.TransChoice(testData.Key, testData.Choice.Value, testData.Params);
+            var actual = i18n.TransChoice(testData.Key, testData.Choice.Value, testData.Params);
             Debug.Log(actual);
             Assert.That(testData.Expect == actual);
         }
@@ -215,14 +216,14 @@ namespace Xeon.Localization.Test
         public void ParseFailedBetweenDataTest()
         {
             const string Key = "parse_failed_between_data";
-            Assert.That(() => I18n.TransChoice(Key, 0), Throws.TypeOf<InvalidDataException>().With.Message.EqualTo("最小値が最大値を超えています"));
+            Assert.That(() => i18n.TransChoice(Key, 0), Throws.TypeOf<InvalidDataException>().With.Message.EqualTo("最小値が最大値を超えています"));
         }
 
         [Test]
         [TestCaseSource(typeof(TestCaseData), nameof(TestCaseData.GetExplicitTransTestData))]
         public void ExplicitTransTest(TestCaseData testData)
         {
-            var actual = I18n.Translate(testData.Lang, testData.Key, testData.Params);
+            var actual = i18n.Translate(testData.Lang, testData.Key, testData.Params);
             Assert.That(testData.Expect == actual);
         }
 
@@ -230,7 +231,7 @@ namespace Xeon.Localization.Test
         [TestCaseSource(typeof(TestCaseData), nameof(TestCaseData.GetExplicitTransChoiceTestData))]
         public void ExplicitTransChoiceTest(TestCaseData testData)
         {
-            var actual = I18n.TransChoice(testData.Lang, testData.Key, testData.Choice.Value, testData.Params);
+            var actual = i18n.TransChoice(testData.Lang, testData.Key, testData.Choice.Value, testData.Params);
             Assert.That(testData.Expect == actual);
         }
 
@@ -238,10 +239,10 @@ namespace Xeon.Localization.Test
         public void ExplicitFallbackFailedTest()
         {
             LogAssert.Expect(LogType.Error, "german_onlyのデータにEnglishとJapaneseの情報が存在しませんでした");
-            Assert.That("german_only" == I18n.Translate(SystemLanguage.English, "german_only"));
+            Assert.That("german_only" == i18n.Translate(SystemLanguage.English, "german_only"));
 
             LogAssert.Expect(LogType.Error, "german_onlyのデータにChineseとJapaneseのデータが存在しませんでした");
-            Assert.That("german_only" == I18n.TransChoice(SystemLanguage.Chinese, "german_only", 0));
+            Assert.That("german_only" == i18n.TransChoice(SystemLanguage.Chinese, "german_only", 0));
         }
     }
 }

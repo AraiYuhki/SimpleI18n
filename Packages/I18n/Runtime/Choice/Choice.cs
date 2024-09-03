@@ -1,5 +1,3 @@
-using System.IO;
-
 namespace Xeon.Localization
 {
     public interface IChoice

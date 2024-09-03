@@ -1,26 +1,35 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 namespace Xeon.Localization
 {
-    public static class I18n
+    public class I18n<TData, TEnum>
+        where TData : ITranslateDataSet<TEnum>
+        where TEnum : Enum
     {
-        private static IDatabase _database;
+        private IDatabase<TData, TEnum> _database;
 
-        public static bool IsInitialized => _database != null;
-        public static void SetDatabase(IDatabase database)
+        public bool IsInitialized => _database != null;
+        public void SetDatabase(IDatabase<TData, TEnum> database)
             => _database = database;
 
-        public static SystemLanguage DefaultLanguage { get; set; } = SystemLanguage.Japanese;
+        public TEnum DefaultLanguage { get; set; } = default;
 
-        public static string Translate(string key, params (string, object)[] param)
+        public I18n(IDatabase<TData, TEnum> database, TEnum defaultLanguage)
+        {
+            _database = database;
+            DefaultLanguage = defaultLanguage;
+        }
+
+        public string Translate(string key, params (string, object)[] param)
         {
             if (!_database.TryFindByKey(key, out var data)) return key;
             return ReplaceParam(data.Text, param);
         }
 
-        public static string Translate(SystemLanguage lang, string key, params (string, object)[] param)
+        public string Translate(TEnum lang, string key, params (string, object)[] param)
         {
             if (!_database.TryFindByKey(key, out var data)) return key;
             if (data.Translate(lang, out var result)) return ReplaceParam(result, param);
@@ -40,13 +49,13 @@ namespace Xeon.Localization
         /// <param name="select">どの選択肢を使うか？</param>
         /// <param name="param">文言中に埋め込むパラメータ</param>
         /// <returns></returns>
-        public static string TransChoice(string key, int select, params (string, object)[] param)
+        public string TransChoice(string key, int select, params (string, object)[] param)
         {
             if (!_database.TryFindByKey(key, out var data)) return key;
             return Parse(data.Text, select, param);
         }
 
-        public static string TransChoice(SystemLanguage lang, string key, int select, params (string, object)[] param)
+        public string TransChoice(TEnum lang, string key, int select, params (string, object)[] param)
         {
             if (!_database.TryFindByKey(key, out var data)) return key;
             if (data.Translate(lang, out var result)) return Parse(result, select, param);
@@ -59,7 +68,7 @@ namespace Xeon.Localization
             return key;
         }
 
-        private static string Parse(string original, int select, params (string, object)[] param)
+        private string Parse(string original, int select, params (string, object)[] param)
         {
             if (!original.Contains("|"))
             {
@@ -84,7 +93,7 @@ namespace Xeon.Localization
         /// <param name="text"></param>
         /// <param name="param"></param>
         /// <returns></returns>
-        private static string ReplaceParam(string text, params (string, object)[] param)
+        private string ReplaceParam(string text, params (string, object)[] param)
         {
             if (param == null) return text;
 
