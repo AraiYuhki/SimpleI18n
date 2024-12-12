@@ -4,7 +4,5 @@
   "version": "1.0.0",
   "unity": "2022.3",
   "description": "I18n\u7ffb\u8a33\u30b7\u30b9\u30c6\u30e0\nLaravel\u306e\u8907\u6570\u5f62\u30eb\u30fc\u30eb\u306b\u5247\u3063\u305f\u30d5\u30a9\u30fc\u30de\u30c3\u30bf\u3092\u5b9f\u88c5\u3057\u3066\u3044\u307e\u3059\u3002",
-  "author": {
-    "name": "arai-yuhki"
-  }
+  "author": "Xeon"
 }
