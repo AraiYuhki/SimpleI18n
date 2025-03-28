@@ -1,5 +1,5 @@
 # I18n
-Joro I18n 翻訳システムパッケージ
+I18n 翻訳システムパッケージ
 
 プロジェクトに追加する場合は、UPMの+ボタンを押して、Add package from git URLから以下のURLを追加する。
 https://github.com/AraiYuhki/SimpleI18n.git?path=Packages/I18n
