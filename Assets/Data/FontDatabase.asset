@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ddb11a1f164a4916a234c67067697a8, type: 3}
+  m_Name: FontDatabase
+  m_EditorClassIdentifier: Assembly-CSharp::Xeon.Localization.Sample.FontDatabase
+  entries:
+  - key: default
+    ja: {fileID: 12800000, guid: a8f1028d6056e4c7fbc8ba48d3434a9c, type: 3}
+    en: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
+    zh: {fileID: 12800000, guid: 40f631e7479584177aeaa84b6703b645, type: 3}
+    ko: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  buildOnEnable: 1
+  duplicateLastWins: 1
+  enableDefaultFallback: 1
+  enableLanguageFallback: 1

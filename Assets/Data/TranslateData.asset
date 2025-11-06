@@ -12,7 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04c35b3fa435e42c9b9936483fbafbcd, type: 3}
   m_Name: TranslateData
   m_EditorClassIdentifier: Assembly-CSharp::Xeon.Localization.Sample.I18nDictionary
-  entries: []
+  entries:
+  - key: title
+    ja: "\u65E5\u672C\u8A9E"
+    en: English
+    zh: "\u6C49\u8BED"
+    ko: "\uD55C\uAD6D\uC5B4"
+  - key: number
+    ja: "\u4E00\u756A|\u4E8C\u756A|\u4E09\u756A|\u56DB\u756A"
+    en: First|Second|Third|Fourth
+    zh: "\u7B2C\u4E00|\u7B2C\u4E8C|\u7B2C\u4E09|\u7B2C\u56DB"
+    ko: "\uB610\uB294 \uCCAB\uBC88\uC9F8|\uB450\uBC88\uC9F8|\uC138\uBC88\uC9F8|\uB124\uBC88\uC9F8"
+  - key: message
+    ja: "\u3053\u3093\u306B\u3061\u306F :name"
+    en: Hallo :name
+    zh: "\u4F60\u597D :name"
+    ko: "\uC548\uB155\uD558\uC138\uC694 :name"
   buildOnEnable: 1
   duplicateLastWins: 1
-  discardEntriesAfterBuild: 1

@@ -7,22 +7,27 @@ using UnityEngine.TestTools;
 
 namespace Xeon.Localization.Test
 {
+    /// <summary>テスト用翻訳データ格納クラス SystemLanguage ごとの文字列を保持</summary>
     public class TestData : ITranslateDataSet<SystemLanguage>
     {
         private Dictionary<SystemLanguage, string> _texts = new Dictionary<SystemLanguage, string>();
+        /// <summary>単一日本語テキストで初期化するコンストラクタ</summary>
         public TestData(string text) => _texts.Add(SystemLanguage.Japanese, text);
 
+        /// <summary>複数言語テキストをタプル配列で初期化するコンストラクタ</summary>
         public TestData(params (SystemLanguage lang, string text)[] texts)
         {
             _texts = texts.ToDictionary(pair => pair.lang, pair => pair.text);
         }
         
+        /// <summary>指定言語のテキストを取得する 成功時 true</summary>
         public bool Translate(SystemLanguage lang, out string result)
         {
             return _texts.TryGetValue(lang, out result);
         }
     }
 
+    /// <summary>テスト用インメモリ翻訳データベース キー→TestData</summary>
     public class TestDatabase : IDatabase<TestData, SystemLanguage>
     {
         private static readonly Dictionary<string, TestData> _data = new()
@@ -39,20 +44,24 @@ namespace Xeon.Localization.Test
             { "rank_test", new TestData((SystemLanguage.Japanese, "{1}優勝|{2}準優勝|[3,5]:rank位(敢闘賞)|[6,*]:rank位"), (SystemLanguage.English, "{1}1st|{2}2nd|{3}3rd|[4,*]:rankth")) },
             { "german_only", new TestData((SystemLanguage.German, "ドイツ語")) },
         };
+        /// <summary>キーに一致する TestData を取得する 見つからなければ例外</summary>
         public TestData FindByKey(string key)
         {
             return _data[key];
         }
 
+        /// <summary>キーに一致する TestData を取得する 成功時 true</summary>
         public bool TryFindByKey(string key, out TestData translated)
         {
             return _data.TryGetValue(key, out translated);
         }
     }
 
+    /// <summary>I18n クラスの機能検証テスト群</summary>
     public class I18nTest
     {
         private I18n<TestData, SystemLanguage> i18n;
+        /// <summary>一度だけテスト用データベースを初期化する</summary>
         [OneTimeSetUp]
         public void SetupDatabase()
         {
@@ -60,16 +69,23 @@ namespace Xeon.Localization.Test
             i18n = new I18n<TestData, SystemLanguage>(database, SystemLanguage.Japanese);
         }
 
+        /// <summary>テストケースデータ格納クラス 各種翻訳パターン情報を保持</summary>
         public class TestCaseData
         {
+            /// <summary>翻訳キー</summary>
             public string Key { get; }
+            /// <summary>埋め込みパラメータ配列</summary>
             public (string, object)[] Params { get; }
+            /// <summary>選択肢インデックスまたは範囲値</summary>
             public int? Choice { get; } = null;
+            /// <summary>使用言語</summary>
             public SystemLanguage Lang { get; } = SystemLanguage.Japanese;
+            /// <summary>期待される結果文字列</summary>
             public string Expect { get; }
 
             private string description = string.Empty;
 
+            /// <summary>選択肢指定あり + パラメータありテストケースを構築する</summary>
             public TestCaseData(string key, string except, string description, int choice, params (string, object)[] param)
             {
                 Key = key;
@@ -79,6 +95,7 @@ namespace Xeon.Localization.Test
                 this.description = description;
             }
 
+            /// <summary>選択肢なし + パラメータ指定テストケースを構築する</summary>
             public TestCaseData(string key, string except, string description, params (string, object)[] param)
             {
                 Key = key;
@@ -87,6 +104,7 @@ namespace Xeon.Localization.Test
                 this.description = description;
             }
 
+            /// <summary>明示言語指定パターンのテストケースを構築する</summary>
             public TestCaseData(string key, string except, string description, SystemLanguage lang, params (string, object)[] param)
             {
                 Key = key;
@@ -96,6 +114,7 @@ namespace Xeon.Localization.Test
                 this.description = description;
             }
 
+            /// <summary>選択肢 + 明示言語指定 + パラメータのテストケースを構築する</summary>
             public TestCaseData(string key, string except, string description, int choice, SystemLanguage lang, params (string, object)[] param)
             {
                 Key = key;
@@ -104,9 +123,9 @@ namespace Xeon.Localization.Test
                 Params = param;
                 Choice = choice;
                 this.description = description;
-
             }
 
+            /// <summary>テスト名表示用に人間可読文字列へ整形する</summary>
             public override string ToString()
             {
                 var paramText = "null";
@@ -123,6 +142,7 @@ namespace Xeon.Localization.Test
                 return string.Join(",", messageList.ToArray());
             }
 
+            /// <summary>単純翻訳テスト用ケース列挙</summary>
             public static IEnumerable<TestCaseData> GetTranslateTestData()
             {
                 yield return new TestCaseData("translate_only", "translated text", "翻訳のみのテスト");
@@ -138,6 +158,7 @@ namespace Xeon.Localization.Test
                 yield return new TestCaseData("test", "test", "キーが存在しない場合のテスト");
             }
 
+            /// <summary>選択肢テキスト解析テスト用ケース列挙</summary>
             public static IEnumerable<TestCaseData> GetTransChoiceTestData()
             {
                 yield return new TestCaseData("translate_only", "translated text", "選択肢なし", 0);
@@ -166,6 +187,7 @@ namespace Xeon.Localization.Test
                 yield return new TestCaseData("ignore key", "ignore key", "キーが存在しない", 0);
             }
 
+            /// <summary>明示的に言語指定した翻訳テスト用ケース列挙</summary>
             public static IEnumerable<TestCaseData> GetExplicitTransTestData()
             {
                 yield return new TestCaseData("explicit_translate_test", "日本語", "明示的に言語を選択するテスト", SystemLanguage.Japanese);
@@ -175,6 +197,7 @@ namespace Xeon.Localization.Test
                 yield return new TestCaseData("german_only", "ドイツ語", "明示的に言語を選択するテスト", SystemLanguage.German);
             }
 
+            /// <summary>明示言語 + 選択肢付き翻訳テスト用ケース列挙</summary>
             public static IEnumerable<TestCaseData> GetExplicitTransChoiceTestData()
             {
                 yield return new TestCaseData("rank_test", "優勝", "変換込みの明示的に言語を選択するテスト", 1, SystemLanguage.Japanese, ("rank", 1));
@@ -195,6 +218,7 @@ namespace Xeon.Localization.Test
             }
         }
 
+        /// <summary>単純翻訳の動作検証</summary>
         [Test]
         [TestCaseSource(typeof(TestCaseData), nameof(TestCaseData.GetTranslateTestData))]
         public void TranslateTest(TestCaseData testData)
@@ -202,6 +226,7 @@ namespace Xeon.Localization.Test
             Assert.That(testData.Expect == i18n.Translate(testData.Key, testData.Params));
         }
 
+        /// <summary>選択肢付き翻訳の解析検証</summary>
         [Test]
         [TestCaseSource(typeof(TestCaseData), nameof(TestCaseData.GetTransChoiceTestData))]
         public void TransChoiceTest(TestCaseData testData)
@@ -211,6 +236,7 @@ namespace Xeon.Localization.Test
             Assert.That(testData.Expect == actual);
         }
 
+        /// <summary>不正な範囲データで例外が発生することを検証</summary>
         [Test]
         public void ParseFailedBetweenDataTest()
         {
@@ -218,6 +244,7 @@ namespace Xeon.Localization.Test
             Assert.That(() => i18n.TransChoice(Key, 0), Throws.TypeOf<InvalidDataException>().With.Message.EqualTo("最小値が最大値を超えています"));
         }
 
+        /// <summary>明示言語指定による翻訳検証</summary>
         [Test]
         [TestCaseSource(typeof(TestCaseData), nameof(TestCaseData.GetExplicitTransTestData))]
         public void ExplicitTransTest(TestCaseData testData)
@@ -226,6 +253,7 @@ namespace Xeon.Localization.Test
             Assert.That(testData.Expect == actual);
         }
 
+        /// <summary>明示言語指定 + 選択肢付き翻訳検証</summary>
         [Test]
         [TestCaseSource(typeof(TestCaseData), nameof(TestCaseData.GetExplicitTransChoiceTestData))]
         public void ExplicitTransChoiceTest(TestCaseData testData)
@@ -234,6 +262,7 @@ namespace Xeon.Localization.Test
             Assert.That(testData.Expect == actual);
         }
 
+        /// <summary>存在しない言語へのフォールバック失敗時ログ検証</summary>
         [Test]
         public void ExplicitFallbackFailedTest()
         {

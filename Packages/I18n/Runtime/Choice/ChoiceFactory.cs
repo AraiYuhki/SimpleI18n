@@ -4,6 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace Xeon.Localization
 {
+    /// <summary>範囲や単一値などのパターン文字列から IChoice 実装を生成するファクトリ</summary>
     public static class ChoiceFactory
     {
         private delegate IChoice CreateMethod(string text);
@@ -21,6 +22,7 @@ namespace Xeon.Localization
             ( BelowRegex, CreateBelow ),
         };
 
+        /// <summary>パターン文字列から適切な Choice を生成する 一致しなければインデックス付き単一選択を返す</summary>
         public static IChoice CreateChoice(string text, int index)
         {
             foreach ((var regex, var method) in CreateList)
@@ -31,6 +33,7 @@ namespace Xeon.Localization
             return new SingleValueChoice(text, index);
         }
 
+        /// <summary>単一値選択パターンを解析して生成する</summary>
         private static SingleValueChoice CreateSingle(string text)
         {
             var match = SingleRegex.Match(text);
@@ -42,6 +45,7 @@ namespace Xeon.Localization
             return new SingleValueChoice(text, int.Parse(value));
         }
 
+        /// <summary>範囲選択パターンを解析して生成する</summary>
         private static RangeValueChoice CreateRange(string text)
         {
             var match = RangeRegex.Match(text);
@@ -55,6 +59,7 @@ namespace Xeon.Localization
             
         }
 
+        /// <summary>下限以上パターンを解析して生成する</summary>
         private static AboveValueChoice CreateAbove(string text)
         {
             var match = AboveRegex.Match(text);
@@ -66,6 +71,7 @@ namespace Xeon.Localization
             return new AboveValueChoice(text, int.Parse(value));
         }
 
+        /// <summary>上限以下パターンを解析して生成する</summary>
         private static BelowValueChoice CreateBelow(string text)
         {
             var match = BelowRegex.Match(text);
@@ -77,6 +83,7 @@ namespace Xeon.Localization
             return new BelowValueChoice(text, int.Parse(value));
         }
 
+        /// <summary>正規表現に一致した部分を除去しテキストを整形する</summary>
         private static string TrimText(string text, Regex regex)
         {
             return regex.Replace(text, string.Empty).Trim();

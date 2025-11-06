@@ -15,8 +15,18 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: 14e479ba779aa49e2815fbfe38849a40
   m_SerializeEntries:
+  - m_GUID: 2e1bb707ac51246e09122ea3d5e9d787
+    m_Address: TMP_FontDatabase
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a4ee8ba6d72ae44b9b23cb11f18de264
-    m_Address: I18nDictionary
+    m_Address: TextDatabase
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bf1b0a577dcd341ecbce914f61ee60f1
+    m_Address: FontDatabase
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
