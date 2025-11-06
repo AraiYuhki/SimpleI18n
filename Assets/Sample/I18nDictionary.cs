@@ -16,7 +16,6 @@ namespace Xeon.Localization.Sample
         [SerializeField] private string ko;
 
         public string Key => key;
-        public string Text => en; // デフォルト表示テキスト (英語)
 
         public bool Translate(Language language, out string result)
         {

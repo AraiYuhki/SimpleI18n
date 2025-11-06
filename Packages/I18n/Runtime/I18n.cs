@@ -26,7 +26,8 @@ namespace Xeon.Localization
         public string Translate(string key, params (string, object)[] param)
         {
             if (!_database.TryFindByKey(key, out var data)) return key;
-            return ReplaceParam(data.Text, param);
+            if (!data.Translate(DefaultLanguage, out var result)) return key;
+            return ReplaceParam(result, param);
         }
 
         public string Translate(TEnum lang, string key, params (string, object)[] param)
@@ -52,7 +53,8 @@ namespace Xeon.Localization
         public string TransChoice(string key, int select, params (string, object)[] param)
         {
             if (!_database.TryFindByKey(key, out var data)) return key;
-            return Parse(data.Text, select, param);
+            if (!data.Translate(DefaultLanguage, out var result)) return key;
+            return Parse(result, select, param);
         }
 
         public string TransChoice(TEnum lang, string key, int select, params (string, object)[] param)

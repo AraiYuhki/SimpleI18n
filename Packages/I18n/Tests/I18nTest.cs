@@ -16,8 +16,7 @@ namespace Xeon.Localization.Test
         {
             _texts = texts.ToDictionary(pair => pair.lang, pair => pair.text);
         }
-
-        public string Text => _texts[SystemLanguage.Japanese];
+        
         public bool Translate(SystemLanguage lang, out string result)
         {
             return _texts.TryGetValue(lang, out result);

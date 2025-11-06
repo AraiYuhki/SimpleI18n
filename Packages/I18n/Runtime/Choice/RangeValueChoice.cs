@@ -19,7 +19,7 @@ namespace Xeon.Localization
         {
             if (_min >= _max)
             {
-                throw new InvalidDataException("Å¬’l‚ªÅ‘å’l‚ğ’´‚¦‚Ä‚¢‚Ü‚·");
+                throw new InvalidDataException("æœ€å°å€¤ãŒæœ€å¤§å€¤ã‚’è¶…ãˆã¦ã„ã¾ã™");
             }
         }
 
