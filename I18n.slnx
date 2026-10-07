@@ -1,0 +1,7 @@
+﻿<Solution>
+  <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="I18nEditor.csproj" />
+  <Project Path="I18nRuntime.csproj" />
+  <Project Path="Tests.csproj" />
+  <Project Path="Assembly-CSharp-Editor.csproj" />
+</Solution>

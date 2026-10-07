@@ -1,0 +1,15 @@
+{
+  "9155c8c2f0b0d1635014980fdf2e4806b2cc58f1": {
+    "executedAt": "2026-10-04T12:17:59.2548883+09:00",
+    "isSuccess": false,
+    "logDirectoryPath": "D:\\Projects\\I18n\\.sebastian-ci\\logs\\9155c8c2f0b0d1635014980fdf2e4806b2cc58f1",
+    "jobs": [
+      {
+        "jobId": "build",
+        "status": "Failed",
+        "durationSeconds": 0.2,
+        "tests": null
+      }
+    ]
+  }
+}
