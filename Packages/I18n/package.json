@@ -1,7 +1,7 @@
 {
   "name": "jp.xeon.localization.i18n",
   "displayName": "simple_I18n",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "unity": "2022.3",
   "description": "I18n翻訳システム\nLaravelの複数形ルールに則ったフォーマッタを実装しています。",
   "author": "Xeon"

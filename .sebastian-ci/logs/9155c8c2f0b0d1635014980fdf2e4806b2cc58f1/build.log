@@ -1,0 +1,30 @@
+[2026-10-07 14:15:06][INFO] === ****: Unity **** への対応を開始 ===
+[2026-10-07 14:15:06][INFO] ****: ビルド試行 1/5
+VBCSCompilerPreWarmer: watching VBCSCompiler (PID 282172)
+VBCSCompilerPreWarmer: pre-warm launched (dotnet PID 258232)
+VBCSCompiler prewarm took 17.01 ms
+[2026-10-07 14:18:44][INFO] ****: ビルド成功（試行 1）
+[2026-10-07 14:18:44][INFO] ****: package.json を 1.0.0 -> 1.1.0 に更新
+warning: in the working copy of 'Packages/manifest.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Packages/packages-lock.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'ProjectSettings/ProjectVersion.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.sebastian-ci.yaml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.vscode/extensions.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.vscode/launch.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.vscode/settings.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Assets/Editor.meta', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Assets/Editor/Ci.meta', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Assets/Editor/Ci/CompileCheck.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Assets/Editor/Ci/CompileCheck.cs.meta', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'CHANGELOG.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Packages/I18n/README_EN.md.meta', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'ProjectSettings/PhysicsCoreProjectSettings2D.asset', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'ProjectSettings/ProjectAuditorSettings.asset', LF will be replaced by CRLF the next time Git touches it
+To github.com:AraiYuhki/****.git
+   9155c8c..bbf7370  master -> master
+To github.com:AraiYuhki/****.git
+ * [new tag]         v1.1.0 -> v1.1.0
+https://github.com/AraiYuhki/****/releases/tag/v1.1.0
+[2026-10-07 14:18:56][INFO] ****: リリース v1.1.0 を作成しました
+[2026-10-07 14:18:56][INFO] === ****: 完了 ===
