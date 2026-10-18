@@ -1,0 +1,32 @@
+[2026-10-18 14:12:06][INFO] === ****: Unity **** への対応を開始 ===
+[2026-10-18 14:12:06][INFO] ****: [Latest] Unity **** ビルド試行 1/5
+[2026-10-18 14:12:07][INFO] Unity **** でビルド確認を開始: D:\Projects\I18n
+VBCSCompilerPreWarmer: watching VBCSCompiler (PID 32072)
+VBCSCompilerPreWarmer: pre-warm launched (dotnet PID 32304)
+VBCSCompiler prewarm took 22.10 ms
+[2026-10-18 14:12:37][INFO] Unity **** 実行中… 経過 00:00:30 |   com.unity.timeline from version 1.8.6 to 6.6.0
+[2026-10-18 14:13:07][INFO] Unity **** 実行中… 経過 00:01:00 |   com.unity.timeline from version 1.8.6 to 6.6.0
+[2026-10-18 14:13:37][INFO] Unity **** 実行中… 経過 00:01:30 |   com.unity.timeline from version 1.8.6 to 6.6.0
+[2026-10-18 14:14:07][INFO] Unity **** 実行中… 経過 00:02:00 |   com.unity.timeline from version 1.8.6 to 6.6.0
+[2026-10-18 14:14:37][INFO] Unity **** 実行中… 経過 00:02:30 |   com.unity.timeline from version 1.8.6 to 6.6.0
+[2026-10-18 14:15:07][INFO] Unity **** 実行中… 経過 00:03:00 | Directory monitor buffer overflow for 'Packages'Next Refresh will do full enumeration.
+[2026-10-18 14:15:37][INFO] Unity **** 実行中… 経過 00:03:30 | Clearing Bee directory 'Library/Bee', since bee backend hash ('Library/Bee/bee_backend.info') is different, previous hash was d8d8df7b24f10237c11f963ebb2d7d0666…
+[2026-10-18 14:16:07][INFO] Unity **** 実行中… 経過 00:04:00 | WorkingDir: D:/Projects/I18n
+[2026-10-18 14:16:37][INFO] Unity **** 実行中… 経過 00:04:30 | AssetDatabase: script compilation time: 59.800445s
+[2026-10-18 14:17:07][INFO] Unity **** 実行中… 経過 00:05:00 | AssetDatabase: script compilation time: 59.800445s
+[2026-10-18 14:17:37][INFO] Unity **** 実行中… 経過 00:05:30 | Begin MonoManager ReloadAssembly
+[2026-10-18 14:18:07][INFO] Unity **** 実行中… 経過 00:06:00 | 		AwakeInstancesAfterBackupRestoration (31ms)
+[2026-10-18 14:18:37][INFO] Unity **** 実行中… 経過 00:06:30 | Imported 'GUID: c130b41d1f572a14793b146add3d6e3f' -> (Import Result ID: '34871a1c741033d2752ecb2ed0fdd3ff') in 0.080 seconds [static and dynamic dependencies]. …
+[2026-10-18 14:19:07][INFO] Unity **** 実行中… 経過 00:07:00 | Imported 'GUID: a6ecd2aa79759e64ba59ab5f51d661ac' -> (Import Result ID: '9441f474b261e399f4552252f4886c24') in 0.052 seconds [static and dynamic dependencies]. …
+[2026-10-18 14:19:37][INFO] Unity **** 実行中… 経過 00:07:30 | Imported 'GUID: 8cbab190b527bd44e8bf5afbc79095e8' -> (Import Result ID: 'ad7169cabe4c483c0e34053d82ba9bac') in 0.045 seconds [static and dynamic dependencies]. …
+[2026-10-18 14:20:07][INFO] Unity **** 実行中… 経過 00:08:00 | Importing 'GUID: 78ca58c05a3174d97921d0da5675cbac - Path: Assets/Fonts/CascadiaNextJP.asset' with importer (NativeFormatImporter)
+[2026-10-18 14:20:37][INFO] Unity **** 実行中… 経過 00:08:30 | Importing 'GUID: 78ca58c05a3174d97921d0da5675cbac - Path: Assets/Fonts/CascadiaNextJP.asset' with importer (NativeFormatImporter)
+[2026-10-18 14:21:07][INFO] Unity **** 実行中… 経過 00:09:00 | Importing 'GUID: b36cdea0d8782445eb192c34412bc4e5 - Path: Packages/com.unity.2d.tooling/Editor/Insider/AnalyzerWindow/AnalyzerWindow.uss' with importer (Scripte…
+[2026-10-18 14:21:37][INFO] Unity **** 実行中… 経過 00:09:30 | [C:\build\output\unity\unity\Modules\LocalizationEditor\LocalizationDatabase.cpp:816]Packages/com.unity.timeline/Editor/Localization/ja.po
+[2026-10-18 14:22:05][INFO] Unity **** のビルド確認が終了しました (exit=0)
+[2026-10-18 14:22:05][INFO] ****: [Latest] ビルド成功（試行 1）
+[2026-10-18 14:22:05][INFO] ****: 最低対応バージョン 6000.0.0f1 でも後方互換性チェックを行います
+[2026-10-18 14:22:05][INFO] Unity 6000.0.0f1 は既にインストール済み
+[2026-10-18 14:22:05][INFO] ****: [MinSupported] Unity 6000.0.0f1 ビルド試行 1/5
+[2026-10-18 14:22:05][INFO] Unity 6000.0.0f1 でビルド確認を開始: D:\Projects\I18n
+[2026-10-18 14:22:36][INFO] Unity 6000.0.0f1 実�

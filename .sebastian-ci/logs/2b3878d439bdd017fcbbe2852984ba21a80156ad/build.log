@@ -34,4 +34,33 @@ VBCSCompiler prewarm took 50.72 ms
 [2026-10-12 16:39:53][WARN] ****: [MinSupported] ビルド失敗（試行 1）
 [2026-10-12 16:39:53][INFO] Claude Code (Opus) による自動修正を実行中… (試行 1/5)
 [2026-10-12 16:40:24][INFO] Claude(Opus) 実行中… 経過 00:00:30
-[2026-10-12 16:40:54][INFO] Claude(Opus) 実�
+[2026-10-12 16:40:54][INFO] Claude(Opus) 実行中… 経過 00:01:00
+[2026-10-12 16:41:24][INFO] Claude(Opus) 実行中… 経過 00:01:30
+[2026-10-12 16:41:39][INFO] Claude Code の自動修正が終了しました (exit=0)
+  [Claude] 最終出力:
+- `Packages/packages-lock.json` still lists test-framework 1.8.0 and timeline 6.6.0, so it no longer matches the manifest. Unity should rewrite it on the next open.
+- `ProjectSettings/ProjectVersion.txt` (the **** update) and the `.sebastian-ci/` files are also still uncommitted.
+**Things to check next run:**
+- **Possible next failure:** `com.unity.ugui` is still set to 2.6.0, but 6000.0.0f1 includes 2.0.0. The log didn't list it as an error, so I left it alone. If the next build fails on ugui, change it to 2.0.0 in the same way.
+- **The error can come back:** when 6000.6 opens the project, it may write the newer version numbers back into the manifest. The next weekly update would then hit the same error.
+[2026-10-12 16:41:39][INFO] ****: [MinSupported] Unity 6000.0.0f1 ビルド試行 2/5
+[2026-10-12 16:41:39][INFO] Unity 6000.0.0f1 でビルド確認を開始: D:\Projects\I18n
+[2026-10-12 16:42:09][INFO] Unity 6000.0.0f1 実行中… 経過 00:00:30 | WorkingDir: D:/Projects/I18n
+[2026-10-12 16:42:39][INFO] Unity 6000.0.0f1 実行中… 経過 00:01:00 | Start importing Packages/com.unity.2d.animation/Editor/Assets/EditorIcons/Light/Create Bones@4x.png using Guid(f618c5fe13b18994aa5aee8b97d8dca1) (TextureImporte…
+[2026-10-12 16:43:36][INFO] Unity 6000.0.0f1 実行中… 経過 00:01:30 | Start importing Packages/com.unity.2d.animation/Editor/Assets/EditorIcons/Selected/Split_Edge.png using Guid(8800032f7e7cdd544b74849c80ce05d4) (TextureImporter)…
+[2026-10-12 16:44:06][INFO] Unity 6000.0.0f1 実行中… 経過 00:02:26 | Start importing Packages/com.unity.test-framework/CONTRIBUTING.md using Guid(57d2ac5c7d5786e499d4794973fe0d4e) (TextScriptImporter)[PhysX] Initialized Multithre…
+[2026-10-12 16:44:36][INFO] Unity 6000.0.0f1 実行中… 経過 00:02:56 | Curl error 42: Callback aborted
+[2026-10-12 16:44:44][INFO] Unity 6000.0.0f1 のビルド確認が終了しました (exit=0)
+[2026-10-12 16:44:44][INFO] ****: [MinSupported] ビルド成功（試行 2）
+[2026-10-12 16:44:45][INFO] ****: package.json を 1.1.0 -> 1.2.0 に更新
+warning: in the working copy of 'CHANGELOG.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Packages/packages-lock.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'ProjectSettings/ProjectVersion.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+To github.com:AraiYuhki/****.git
+   2b3878d..1d7880b  master -> master
+To github.com:AraiYuhki/****.git
+ * [new tag]         v1.2.0 -> v1.2.0
+https://github.com/AraiYuhki/****/releases/tag/v1.2.0
+[2026-10-12 16:45:20][INFO] ****: リリース v1.2.0 を作成しました
+[2026-10-12 16:45:20][INFO] === ****: 完了 ===
