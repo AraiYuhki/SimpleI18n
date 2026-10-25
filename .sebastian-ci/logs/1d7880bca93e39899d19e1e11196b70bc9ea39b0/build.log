@@ -29,4 +29,50 @@ VBCSCompiler prewarm took 22.10 ms
 [2026-10-18 14:22:05][INFO] Unity 6000.0.0f1 は既にインストール済み
 [2026-10-18 14:22:05][INFO] ****: [MinSupported] Unity 6000.0.0f1 ビルド試行 1/5
 [2026-10-18 14:22:05][INFO] Unity 6000.0.0f1 でビルド確認を開始: D:\Projects\I18n
-[2026-10-18 14:22:36][INFO] Unity 6000.0.0f1 実�
+[2026-10-18 14:22:36][INFO] Unity 6000.0.0f1 実行中… 経過 00:00:30 | [Licensing::Client] Successfully resolved entitlements
+[2026-10-18 14:23:06][INFO] Unity 6000.0.0f1 実行中… 経過 00:01:00 | [Licensing::Client] Successfully resolved entitlements
+[2026-10-18 14:23:36][INFO] Unity 6000.0.0f1 実行中… 経過 00:01:30 | [Licensing::Client] Successfully resolved entitlements
+[2026-10-18 14:24:06][INFO] Unity 6000.0.0f1 実行中… 経過 00:02:00 | [Licensing::Client] Successfully resolved entitlements
+[2026-10-18 14:24:36][INFO] Unity 6000.0.0f1 実行中… 経過 00:02:30 | [Licensing::Client] Successfully resolved entitlements
+[2026-10-18 14:25:06][INFO] Unity 6000.0.0f1 実行中… 経過 00:03:00 | [Licensing::Client] Successfully resolved entitlements
+[2026-10-18 14:25:36][INFO] Unity 6000.0.0f1 実行中… 経過 00:03:30 | [Licensing::Client] Successfully resolved entitlements
+[2026-10-18 14:25:41][INFO] Unity 6000.0.0f1 のビルド確認が終了しました (exit=1)
+[2026-10-18 14:25:41][WARN] ****: [MinSupported] ビルド失敗（試行 1）
+[2026-10-18 14:25:41][INFO] Claude Code (Opus) による自動修正を実行中… (試行 1/5)
+[2026-10-18 14:26:11][INFO] Claude(Opus) 実行中… 経過 00:00:30
+[2026-10-18 14:26:41][INFO] Claude(Opus) 実行中… 経過 00:01:00
+[2026-10-18 14:26:47][INFO] Claude Code の自動修正が終了しました (exit=0)
+  [Claude] 最終出力:
+C# のコード変更はないので、`#if UNITY_6000_6_OR_NEWER` による分岐やユーティリティクラスの追加は必要ありませんでした。README の最低対応バージョン（6000.0.0f1）もそのままです。
+## そのままにしたもの
+自動更新ジョブが変更したファイル（`ProjectSettings/ProjectVersion.txt`、`.sebastian-ci/` 配下）には触れておらず、未コミットのまま残しています。push もしていません。
+## 再発について
+Unity 6000.6.x でプロジェクトを開くと、この2パッケージが毎回 builtin 版に書き換わるようです。対策しない限り、毎週同じ失敗が起きる可能性が高いです。たとえば自動更新ジョブで manifest のこの2行を固定しておく、といった対策が考えられます。
+[2026-10-18 14:26:47][INFO] ****: [MinSupported] Unity 6000.0.0f1 ビルド試行 2/5
+[2026-10-18 14:26:47][INFO] Unity 6000.0.0f1 でビルド確認を開始: D:\Projects\I18n
+[2026-10-18 14:27:17][INFO] Unity 6000.0.0f1 実行中… 経過 00:00:30 | Native extension for iOS target not found
+[2026-10-18 14:27:47][INFO] Unity 6000.0.0f1 実行中… 経過 00:01:00 | WorkingDir: D:/Projects/I18n
+[2026-10-18 14:28:17][INFO] Unity 6000.0.0f1 実行中… 経過 00:01:30 | Start importing ProjectSettings/VFXManager.asset using Guid(0000000000000000c100000000000000) (LibraryAssetImporter)[PhysX] Initialized MultithreadedTaskDispatc…
+[2026-10-18 14:28:47][INFO] Unity 6000.0.0f1 実行中… 経過 00:02:00 | Refreshing native plugins compatible for Editor in 3.86 ms, found 5 plugins.
+[2026-10-18 14:29:18][INFO] Unity 6000.0.0f1 実行中… 経過 00:02:30 | 		AwakeInstancesAfterBackupRestoration (9ms)
+[2026-10-18 14:29:58][INFO] Unity 6000.0.0f1 実行中… 経過 00:03:00 | Start importing Packages/com.unity.2d.animation/Editor/Assets/EditorIcons/Dark/d_Copy@4x.png using Guid(00b8ce4a201871b498992f536279acf7) (TextureImporter)[Phys…
+[2026-10-18 14:30:28][INFO] Unity 6000.0.0f1 実行中… 経過 00:03:40 | Start importing Packages/com.unity.collab-proxy/Editor/Assets/Images/d_ArrowCaretLeft.png using Guid(e2c5ee46f6b0148afbe40d935c70faee) (TextureImporter)[PhysX] …
+[2026-10-18 14:30:58][INFO] Unity 6000.0.0f1 実行中… 経過 00:04:10 | Start importing Packages/com.unity.timeline/Editor/StyleSheets/Images/DarkSkin/TimelineContinue.png using Guid(f747f9cdf03f2ff418fe728a77e8cbef) (TextureImporte…
+[2026-10-18 14:31:28][INFO] Unity 6000.0.0f1 実行中… 経過 00:04:40 | Start importing Packages/com.unity.timeline/Editor/StyleSheets/Images/Icons/TrackAvatarButtonEnabled.png using Guid(4bf6507f1346b2746a35384f6a5fd5f9) 
+[2026-10-18 14:31:58][INFO] Unity 6000.0.0f1 実行中… 経過 00:05:10 | Start importing Packages/com.unity.ugui/Editor Resources/Shaders/TMP_SDF_SSD.cginc using Guid(abe6991365a27d341a10580f3b7c0f44) (ShaderIncludeImporter)[PhysX] I…
+[2026-10-18 14:32:28][INFO] Unity 6000.0.0f1 実行中… 経過 00:05:40 | Start importing Assets/Fonts/CascadiaNextJP.asset using Guid(78ca58c05a3174d97921d0da5675cbac) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispat…
+[2026-10-18 14:32:58][INFO] Unity 6000.0.0f1 実行中… 経過 00:06:10 | Shader 'TextMeshPro/Distance Field': fallback shader 'TextMeshPro/Mobile/Distance Field' not found
+[2026-10-18 14:33:28][INFO] Unity 6000.0.0f1 実行中… 経過 00:06:40 | Start importing Packages/com.unity.2d.aseprite/CHANGELOG.md using Guid(d1e6a8865d4b048aa99eb62f57e8cd10) (TextScriptImporter)[PhysX] Initialized MultithreadedTa…
+[2026-10-18 14:33:56][INFO] Unity 6000.0.0f1 のビルド確認が終了しました (exit=0)
+[2026-10-18 14:33:56][INFO] ****: [MinSupported] ビルド成功（試行 2）
+[2026-10-18 14:33:57][INFO] ****: package.json を 1.2.0 -> 1.3.0 に更新
+warning: in the working copy of 'CHANGELOG.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'ProjectSettings/ProjectVersion.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+To github.com:AraiYuhki/****.git
+   1d7880b..70cb191  master -> master
+To github.com:AraiYuhki/****.git
+ * [new tag]         v1.3.0 -> v1.3.0
+https://github.com/AraiYuhki/****/releases/tag/v1.3.0
+[2026-10-18 14:34:06][INFO] ****: リリース v1.3.0 を作成しました
+[2026-10-18 14:34:06][INFO] === ****: 完了 ===

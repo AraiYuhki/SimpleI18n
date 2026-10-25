@@ -1,0 +1,29 @@
+[2026-10-25 14:02:53][INFO] === ****: Unity **** への対応を開始 ===
+[2026-10-25 14:02:53][INFO] ****: [Latest] Unity **** ビルド試行 1/5
+[2026-10-25 14:02:53][INFO] Unity **** でビルド確認を開始: D:\Projects\I18n
+VBCSCompilerPreWarmer: watching VBCSCompiler (PID 150976)
+VBCSCompilerPreWarmer: pre-warm launched (dotnet PID 140048)
+VBCSCompiler prewarm took 20.44 ms
+[2026-10-25 14:03:23][INFO] Unity **** 実行中… 経過 00:00:30 | Cannot upgrade database Library/SourceAssetDB. Will delete the database and recreate content in the new format instead.Cannot upgrade database Library/ArtifactD…
+[2026-10-25 14:03:53][INFO] Unity **** 実行中… 経過 00:01:00 |   com.unity.timeline from version 1.8.6 to 6.6.0
+[2026-10-25 14:04:23][INFO] Unity **** 実行中… 経過 00:01:30 |   com.unity.timeline from version 1.8.6 to 6.6.0
+[2026-10-25 14:04:53][INFO] Unity **** 実行中… 経過 00:02:00 |   com.unity.timeline from version 1.8.6 to 6.6.0
+[2026-10-25 14:05:23][INFO] Unity **** 実行中… 経過 00:02:30 |   com.unity.timeline from version 1.8.6 to 6.6.0
+[2026-10-25 14:05:53][INFO] Unity **** 実行中… 経過 00:03:00 | [Licensing::Client] Successfully resolved entitlement details
+[2026-10-25 14:06:23][INFO] Unity **** 実行中… 経過 00:03:30 | [Licensing::Client] Successfully resolved entitlement details
+[2026-10-25 14:06:53][INFO] Unity **** 実行中… 経過 00:04:00 | [Licensing::Client] Successfully resolved entitlement details
+[2026-10-25 14:07:23][INFO] Unity **** 実行中… 経過 00:04:30 | [Licensing::Client] Successfully resolved entitlement details
+[2026-10-25 14:07:54][INFO] Unity **** 実行中… 経過 00:05:00 | Clearing Bee directory 'Library/Bee', since bee backend hash ('Library/Bee/bee_backend.info') is different, previous hash was d8d8df7b24f10237c11f963ebb2d7d0666…
+[2026-10-25 14:08:24][INFO] Unity **** 実行中… 経過 00:05:30 | WorkingDir: D:/Projects/I18n
+[2026-10-25 14:08:54][INFO] Unity **** 実行中… 経過 00:06:00 | WorkingDir: D:/Projects/I18n
+[2026-10-25 14:09:24][INFO] Unity **** 実行中… 経過 00:06:30 | WorkingDir: D:/Projects/I18n
+[2026-10-25 14:09:54][INFO] Unity **** 実行中… 経過 00:07:00 | WorkingDir: D:/Projects/I18n
+[2026-10-25 14:10:24][INFO] Unity **** 実行中… 経過 00:07:30 | WorkingDir: D:/Projects/I18n
+[2026-10-25 14:10:54][INFO] Unity **** 実行中… 経過 00:08:00 | Importing 'GUID: bcb706ca0f6dd48449aa27a93faa899c - Path: Packages/com.unity.2d.psdimporter/Editor/Unity.2D.Psdimporter.Editor.asmdef' with importer (AssemblyDe…
+[2026-10-25 14:11:24][INFO] Unity **** 実行中… 経過 00:08:30 | Starting new worker id: 0 with log in D:/Projects/I18n/Logs/AssetImportWorkerHW0.log
+[2026-10-25 14:11:54][INFO] Unity **** 実行中… 経過 00:09:00 | Imported 'GUID: 0175a7523f9f1754ca406f92afcfcbc6' -> (Import Result ID: 'd8f9921bf0187ee9487c3ece2a2cb96d') in 0.204 seconds [static and dynamic dependencies]. …
+[2026-10-25 14:12:24][INFO] Unity **** 実行中… 経過 00:09:30 | Imported 'GUID: 232fe04bebe5e904bb0568e685bd32a6' -> (Import Result ID: '859e7f053b3fad49088e360645db0a38') in 0.055 seconds [static and dynamic dependencies]. …
+[2026-10-25 14:12:54][INFO] Unity **** 実行中… 経過 00:10:00 | Imported 'GUID: b528c1b33a65cf94ea74f830b54c9acb' -> (Import Result ID: '911fda745244ebc0547684becdd1c389') in 0.049 seconds [static and dynamic dependencies]. …
+[2026-10-25 14:13:24][INFO] Unity **** 実行中… 経過 00:10:30 | Imported 'GUID: a86470a33a6bf42c4b3595704624658b' -> (Import Result ID: '63ae910b3647baaccc180ae4e7d83a0f') in 0.287 seconds [static and dynamic dependencies]. …
+[2026-10-25 14:13:54][INFO] Unity **** 実行中… 経過 00:11:00 | Imported 'GUID: 8be64ad32582748f1965311ca0665f30' -> (Import Result ID: '21af7dd755374673d1f0195ba31a01b7') in 0.164 seconds [static and dynamic dependencies]. …
+[2026-10-25 14:14:24][INFO] Unity **** 実行中… 経過 00:11:30 | Imported 'GUID: 0e0d5e38f19194a978d2f42b0b806775' -> (Import Result ID: 'a021950a40a
